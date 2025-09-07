@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="FinanceManagerInstaller" Language="1033" Version="1.0.0.0" Manufacturer="HP" UpgradeCode="618eaab6-1097-41c1-a4cc-350e79169924">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="FinanceManagerInstaller" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="FinanceManagerInstaller" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+
+			<!-- Main App -->
+			<Component Id="FinanceExe" Guid="*">
+				<File Id="FinanceAppExe"                     
+                      Source="$(var.FinanceManagerApp.TargetPath)"
+					  KeyPath="yes"/>
+			</Component>
+
+			<!-- Transaction Library -->
+			<Component Id="TransactionLib" Guid="*">
+				<File Id="TransactionLibraryDll" 
+                      Source="$(var.TransactionLibrary.TargetPath)"
+					  KeyPath="yes"/>
+			</Component>
+
+			<!-- Report Library -->
+			<Component Id="ReportLib" Guid="*">
+				<File Id="ReportLibraryDll"               
+                      Source="$(var.ReportLibrary.TargetPath)"
+					  KeyPath="yes"/>
+			</Component>
+
+			<!-- Export Library -->
+			<Component Id="ExportLib" Guid="*">
+				<File Id="ExportLibraryDll"               
+                      Source="$(var.ExportLibrary.TargetPath)"
+					  KeyPath="yes"/>
+			</Component>
+		</ComponentGroup>
+
+	</Fragment>
+</Wix>
