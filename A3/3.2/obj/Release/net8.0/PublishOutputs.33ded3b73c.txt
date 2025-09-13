@@ -1,0 +1,7 @@
+/Users/khoale/Downloads/SWE40006/A3/3.2/publish/3.2
+/Users/khoale/Downloads/SWE40006/A3/3.2/publish/appsettings.Development.json
+/Users/khoale/Downloads/SWE40006/A3/3.2/publish/appsettings.json
+/Users/khoale/Downloads/SWE40006/A3/3.2/publish/3.2.dll
+/Users/khoale/Downloads/SWE40006/A3/3.2/publish/3.2.deps.json
+/Users/khoale/Downloads/SWE40006/A3/3.2/publish/3.2.runtimeconfig.json
+/Users/khoale/Downloads/SWE40006/A3/3.2/publish/3.2.pdb
